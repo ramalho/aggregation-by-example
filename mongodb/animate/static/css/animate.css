@@ -19,6 +19,20 @@ body {
 #col1 {
   float: right;
 }
+/* animation styles */
+/* dotted | dashed | solid | double | groove | ridge | inset | outset */
+.current-record {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #d33682;
+}
+.selected-field {
+  background-color: #fdf6e3;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d33682;
+}
+/* syntax coloring */
 kbd {
   color: #2aa198;
 }
