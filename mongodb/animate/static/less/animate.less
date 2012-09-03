@@ -21,18 +21,18 @@
 @cyan:      #2aa198;
 @green:     #859900;
 
-@pagewidth: 1280px;
+@pagewidth: 1260px;
 @colwidth: 600px;
-@colheight: 800px;
-@gutter: 50px;
+@colheight: 700px;
+@gutter: 40px;
 
 body {
     background-color: @base01;
     width: @pagewidth;
+    font-size: 16px;
 }
 
 .collection {
-    font-size: 16px;
     width: @colwidth;
     height: @colheight;
     background-color: @base2;
@@ -46,13 +46,18 @@ body {
     float: right;
 }
 
+.record {
+    border-style: solid;
+    border-width: 2px;
+    border-color: @base2;
+}
+
+
 /* animation styles */
 
 /* dotted | dashed | solid | double | groove | ridge | inset | outset */
 
 .current-record {
-    border-style: solid;
-    border-width: 2px;
     border-color: @magenta;
 }
 
@@ -62,6 +67,16 @@ body {
     border-width: 1px;
     border-color: @magenta;
 }
+
+#rec1_0 {
+    display: none;
+}
+
+/*
+#rec1_0 * {
+    color: @base2;
+}
+*/
 
 /* syntax coloring */
 kbd {

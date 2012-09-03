@@ -3,13 +3,11 @@
   <meta charset="utf-8">
   <title>MongoDB: Aggregation by Example</title>
   <meta name="description" content="Animated demonstrations of the new MongoDB 2.2 agregation framework">
-    
-    <script type="text/javascript" src="jquery-1.8.1.js"></script>
+
     <link rel="stylesheet" href="static/css/animate.css" type="text/css" charset="utf-8">
 </head>
 <body>
-<div class="collection" id="col0"><pre><var class="array">[
-  <div id="0">{ 
+<div class="collection" id="col0"><pre><var class="array">[<div class="record" id="rec0_0">  {
     <kbd class="_id">_id: <var>"0393048470"</var></kbd>,
     <kbd class="title">title: <var>"The Annotated Alice"</var></kbd>,
     <kbd class="creators">creators: <var class="array">[
@@ -22,25 +20,20 @@
     <kbd class="price">price: <code>{ <kbd class="currency">currency</kbd>: <var>"USD"</var>, <kbd class="amount">amount</kbd>: <var class="number">29.95</var> }</code></kbd>,
     <kbd class="sales">sales: <var class="array">[
       <code>{ <kbd class="year">year: <var class="number">2009</var></kbd>, <kbd class="count">count: <var class="number">18</var></kbd> }</code>,
-      <code>{ <kbd class="year">year>: <var class="number">2010</var></kbd>, <kbd class="count">count: <var class="number">17</var></kbd> }</code>,
+      <code>{ <kbd class="year">year: <var class="number">2010</var></kbd>, <kbd class="count">count: <var class="number">17</var></kbd> }</code>,
       <code>{ <kbd class="year">year: <var class="number">2011</var></kbd>, <kbd class="count">count: <var class="number">20</var></kbd> }</code>
     ]</var></kbd>,
     <kbd class="subjects">subjects: <var class="array">[ <var>"talking-animals"</var>, <var>"logic"</var>, <var>"games"</var> ]</var></kbd>,
     <kbd class="stock">stock: <var class="number">21</var></kbd>
-  }</div>
-]</var></pre></div> <!--collection #0-->
+  }</div>]</var></pre></div> <!--col0-->
 
-<div class="collection" id="col1"><pre><var class="array">[
-]</var></pre></div> <!--collection #1-->
+<div class="collection" id="col1"><pre><var class="array">[<div id="rec1_0">  {
+    <kbd class="_id">_id: <var>"0393048470"</var></kbd>,
+    <kbd class="title">title: <var>"The Annotated Alice"</var></kbd>,
+  }</div>]</var></pre></div> <!--col1-->
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="static/jquery-1.8.1.js"><\/script>')</script>
 
-<script>
-    var _gaq=[['_setAccount','UA-27992122-1'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
 <script src="static/animate.js"></script>
 </body>

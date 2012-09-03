@@ -5,12 +5,12 @@
  */
 body {
   background-color: #586e75;
-  width: 1280px;
+  width: 1260px;
+  font-size: 16px;
 }
 .collection {
-  font-size: 16px;
   width: 600px;
-  height: 800px;
+  height: 700px;
   background-color: #eee8d5;
 }
 #col0 {
@@ -19,11 +19,14 @@ body {
 #col1 {
   float: right;
 }
+.record {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #eee8d5;
+}
 /* animation styles */
 /* dotted | dashed | solid | double | groove | ridge | inset | outset */
 .current-record {
-  border-style: solid;
-  border-width: 2px;
   border-color: #d33682;
 }
 .selected-field {
@@ -32,6 +35,14 @@ body {
   border-width: 1px;
   border-color: #d33682;
 }
+#rec1_0 {
+  display: none;
+}
+/*
+#rec1_0 * {
+    color: @base2;
+}
+*/
 /* syntax coloring */
 kbd {
   color: #2aa198;

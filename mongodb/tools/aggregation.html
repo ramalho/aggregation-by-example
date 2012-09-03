@@ -1,0 +1,171 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+
+  <title>MongoDB: Aggregation by Example</title>
+  <meta name="description" content="">
+
+</head>
+<body>
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  <header>
+
+  </header>
+  <div role="main">
+
+<pre id="books">
+[
+  { "_id": "0393048470",
+    "title": "The Annotated Alice",
+    "creators": [
+      { "role": "author",      "name": "Lewis Carroll" },
+      { "role": "illustrator", "name": "John Tenniel" },
+      { "role": "editor",      "name": "Martin Gardner" }
+    ],
+    "language": "en",
+    "pages": 384,
+    "price": { "currency": "USD", "amount": 29.95 },
+    "sales": [
+      { "year": 2009, "count": 18 },
+      { "year": 2010, "count": 17 },
+      { "year": 2011, "count": 20 }
+    ],
+    "subjects": [ "talking-animals", "logic", "games" ],
+    "stock": 21
+  },
+  { "_id": "0879755733",
+    "title": "Science: Good, Bad, and Bogus",
+    "creators": [
+      { "role": "author", "name": "Martin Gardner" }
+    ],
+    "language": "en",
+    "pages": 416,
+    "price": { "currency": "USD", "amount": 15.55 },
+    "sales": [
+      { "year": 2011, "count": 1 }
+    ],
+    "subjects": [ "science", "occult" ],
+    "stock": 1
+  },
+  { "_id": "0517543818",
+    "title": "Science Fiction Puzzle Tales",
+    "creators": [
+      { "role": "author", "name": "Martin Gardner" }
+    ],
+    "language": "en",
+    "pages": 148,
+    "price": { "currency": "USD", "amount": 12.95 },
+    "sales": [
+      { "year": 2010, "count": 1 },
+      { "year": 2011, "count": 1 }
+    ],
+    "subjects": [ "logic", "puzzles" ],
+    "stock": 1
+  },
+  { "_id": "0486204928",
+    "title": "Symbolic Logic & The Game of Logic",
+    "creators": [
+      { "role": "author", "name": "Lewis Carroll" }
+    ],
+    "language": "en",
+    "pages": 352,
+    "price": { "currency": "USD", "amount": 12.95 },
+    "sales": [
+      { "year": 2009, "count": 1 },
+      { "year": 2011, "count": 2 }
+    ],
+    "subjects": [ "logic", "puzzles" ],
+    "stock": 3
+  },
+  { "_id": "8504008320",
+    "title": "Alice no País das Maravilhas",
+    "creators": [
+      { "role": "author",     "name": "Lewis Carroll" },
+      { "role": "translator", "name": "Monteiro Lobato" }
+    ],
+    "language": "pt-br",
+    "pages": 48,
+    "price": { "currency": "BRL", "amount": 27.9 },
+    "sales": [
+      { "year": 2009, "count": 12 },
+      { "year": 2010, "count": 14 },
+      { "year": 2011, "count": 17 }
+    ],
+    "subjects": [ "talking-animals" ],
+    "stock": 13
+  },
+  { "_id": "8525045942",
+    "title": "Aritmética da Emília",
+    "creators": [
+      { "role": "author", "name": "Monteiro Lobato" }
+    ],
+    "language": "pt-br",
+    "pages": 128,
+    "price": { "currency": "BRL", "amount": 26.0 },
+    "sales": [
+      { "year": 2009, "count": 4 },
+      { "year": 2010, "count": 5 },
+      { "year": 2011, "count": 5 }
+    ],
+    "subjects": [ "talking-animals", "math" ],
+    "stock": 8
+  },
+  { "_id": "048628462X",
+    "title": "Introduction to Logic",
+    "creators": [
+      { "role": "author",     "name": "Alfred Tarski" },
+      { "role": "translator", "name": "Olaf Helmer" }
+    ],
+    "language": "en",
+    "pages": 272,
+    "price": { "currency": "USD", "amount": 12.95 },
+    "sales": [
+      { "year": 2009, "count": 2 },
+      { "year": 2010, "count": 3 },
+      { "year": 2011, "count": 7 }
+    ],
+    "subjects": [ "logic", "science" ],
+    "stock": 5
+  },
+  { "_id": "0136086209",
+    "title": "Fundamentals of Database Systems" },
+    "creators": [
+      { "role": "author", "name": "Ramez Elmasri" },
+      { "role": "author", "name": "Shamkant Navathe" },
+    ]
+    "language": "en",
+    "pages": 1200,
+    "price": { "currency": "USD", "amount": 145.40 },
+    "sales": [
+      { "year": 2011, "count": 2 }
+    ],
+    "subjects": [ "database", "relational-model" ],
+    "stock": 2
+  }
+]
+
+</pre>
+
+  </div>
+  <footer>
+
+  </footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="mark-records.js" />
+  <script>window.jQuery || document.write('<script src="assets/jquery-1.7.2.js"><\/script>')</script>
+
+  <script>
+    var _gaq=[['_setAccount','UA-27992122-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+  <script>
+  	$(function() {
+  		$('body').prepend('<h1>done!</h1>')
+  	});
+  </script>
+</body>
+</html>
